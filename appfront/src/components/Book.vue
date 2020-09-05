@@ -15,7 +15,7 @@
         </el-table-column>
         <el-table-column prop="book_name" label="书名" min-width="100">
         </el-table-column>
-        <el-table-column prop="create_time" label="添加时间" min-width="100">
+        <el-table-column prop="create_time" label="添加时间" min-width="100" :formatter="formatDate">
         </el-table-column>
       </el-table>
     </el-row>
@@ -44,6 +44,15 @@ export default {
     this.showBooks()
   },
   methods: {
+    formatDate (row, column) {
+      // 获取单元格数据
+      let data = row[column.property]
+      if (data == null) {
+        return null
+      }
+      let dt = new Date(data)
+      return dt.getFullYear() + '-' + (dt.getMonth() + 1) + '-' + dt.getDate() + ' ' + dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds()
+    },
     addBook () {
       let that = this
       this.$axios({
