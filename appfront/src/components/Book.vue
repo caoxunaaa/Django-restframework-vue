@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <Header></Header>
     <el-row display="margin-top:10px">
       <el-input v-model="add" placeholder="请输入书名" style="display:inline-table; width: 30%; float:left"></el-input>
       <el-button type="primary" @click="addBook()" style="float:left; margin: 2px;">新增</el-button>
@@ -19,7 +18,6 @@
         </el-table-column>
       </el-table>
     </el-row>
-    <Footer></Footer>
   </div>
 </template>
 

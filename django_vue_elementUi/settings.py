@@ -82,10 +82,22 @@ WSGI_APPLICATION = 'django_vue_elementUi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'superxon_db',
+        'USER': 'caoxun',
+        'PASSWORD': 'caoxun8500139',
+        'HOST': '47.115.52.186',
+        'PORT': '3306',
     }
 }
 
