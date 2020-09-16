@@ -9,17 +9,20 @@
       </el-input>
     </div></el-col>
     </el-row>
+
     <el-row :gutter="20">
     <el-col :span="8" :offset="8"><div class="grid-content bg-purple">
       <input type="file" id="myfile">
       <el-button type="primary submit" @click.prevent="upload" style="float: right; height: auto">上传</el-button>
     </div></el-col>
     </el-row>
+
     <el-row :gutter="20">
-    <el-col :span="8" :offset="8"><div class="grid-content bg-purple">
+    <el-col :span="8" :offset="8"><div class="grid-content ">
       <el-progress type="line" :percentage="percentage" class="progress" :show-text="true"></el-progress>
     </div></el-col>
     </el-row>
+
     <el-dialog
       title="提示"
       :visible="dialogVisible"
@@ -53,7 +56,7 @@ export default {
       form_data.append('name', this.filenickname)
       form_data.append('file_path', myfile, myfile.name)
       this.$axios({
-        url: 'http://127.0.0.1:8000/files/',
+        url: 'http://172.20.3.107:8000/files/',
         method: 'post',
         data: form_data,
         headers: {
@@ -79,6 +82,12 @@ export default {
 </script>
 
 <style>
+  .el-row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
   .el-col {
     border-radius: 4px;
   }
