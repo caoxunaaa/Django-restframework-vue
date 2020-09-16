@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Book from '@/components/Book'
 import VideosLayout from '@/components/VideosLayout'
 import Video from '@/components/Video'
+import FileUpload from '@/components/FileUpload'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/video_layout',
       name: 'VideosLayout',
       component: VideosLayout
+    },
+    {
+      path: '/fileupload',
+      name: 'FileUpload',
+      component: FileUpload
     }
   ]
 })

@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from myDjangoApp import views
+from myDjangoApp.views import BookViewSet
+from fileManagement.views import FileViewSet
 from django.views.generic import TemplateView
 
 router = routers.DefaultRouter()
-router.register(r'books', views.BookViewSet, basename='book')
+router.register(r'books', BookViewSet, basename='book')
+router.register(r'files', FileViewSet, basename='file')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),

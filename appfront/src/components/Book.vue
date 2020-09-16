@@ -22,15 +22,8 @@
 </template>
 
 <script>
-import Header from './header'
-import Footer from './footer'
-
 export default {
   name: 'Book',
-  components: {
-    Header,
-    Footer
-  },
   data () {
     return {
       add: '',
