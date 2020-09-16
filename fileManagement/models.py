@@ -14,7 +14,7 @@ class MyStorage(FileSystemStorage):
 
 def upload_to(instance, filename):
     if isinstance(filename, str):
-        return '/'.join([filename.split('.')[1], filename])
+        return '/'.join([filename.split('.')[-1], filename])
 
 
 class File(models.Model):
