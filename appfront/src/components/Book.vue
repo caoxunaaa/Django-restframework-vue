@@ -48,7 +48,7 @@ export default {
       let that = this
       this.$axios({
         method: 'post',
-        url: 'http://127.0.0.1:8000/books/',
+        url: this.GLOBAL.BASE_URL + '/books/',
         data: {
           book_name: that.add
         }
@@ -67,7 +67,7 @@ export default {
       let that = this
       this.$axios({
         method: 'delete',
-        url: 'http://127.0.0.1:8000/books/' + that.remove
+        url: this.GLOBAL.BASE_URL + '/books/' + that.remove
       }).then(function (response) {
         console.log(response)
         var res = response.data
@@ -79,7 +79,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://127.0.0.1:8000/books/'
+        url: this.GLOBAL.BASE_URL + '/books/'
       }).then(function (response) {
         var res = response.data
         console.log(res)

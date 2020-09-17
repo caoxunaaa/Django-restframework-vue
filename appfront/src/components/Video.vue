@@ -14,8 +14,8 @@ export default {
       // 视频播放
       file_path: '',
       playerOptions: {
-        playbackRates: [0.7, 1.0, 1.5, 2.0], // 播放速度
-        autoplay: true, // 如果true,浏览器准备好时开始回放。
+        playbackRates: [0.5, 1.0, 2.0, 4.0, 8.0, 16.0], // 播放速度
+        autoplay: false, // 如果true,浏览器准备好时开始回放。
         muted: false, // 默认情况下将会消除任何音频。
         loop: false, // 导致视频一结束就重新开始。
         preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
@@ -25,14 +25,15 @@ export default {
         sources: [{
           type: 'video/mp4',
           src: '' // url地址
+          // src: require('../../../static/media/mp4/cat.mp4')
         }],
         poster: '', // 你的封面地址
         // width: document.documentElement.clientWidth,
         notSupportedMessage: '此视频暂无法播放，请稍后再试', // 允许覆盖Video.js无法播放媒体源时显示的默认信息。
         controlBar: {
           timeDivider: true,
-          durationDisplay: true,
-          remainingTimeDisplay: false,
+          durationDisplay: false,
+          remainingTimeDisplay: true,
           fullscreenToggle: true // 全屏按钮
         }
       }

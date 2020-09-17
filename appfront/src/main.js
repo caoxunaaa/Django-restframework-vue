@@ -7,7 +7,11 @@ import 'element-ui/lib/theme-chalk/index.css'
 import ElementUI from 'element-ui'
 import VideoPlayer from 'vue-video-player'
 import axios from 'axios'
+import global_ from './Base.vue'
 Vue.prototype.$axios = axios
+Vue.prototype.GLOBAL = global_
+axios.defaults.baseURL = global_.BASE_URL
+
 let getCookie = function (cookie) {
   let reg = /csrftoken=([\w]+)[;]?/g
   return reg.exec(cookie)[1]

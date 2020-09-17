@@ -76,7 +76,7 @@ export default {
       let that = this
       this.$axios({
         method: 'get',
-        url: 'http://172.20.3.107:8000/files/'
+        url: this.GLOBAL.BASE_URL + '/files/'
       }).then(function (response) {
         var res = response.data
         console.log(res)
